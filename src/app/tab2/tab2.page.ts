@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DataProviderService } from '../data-provider.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  public name;
+  public message;
+  public priority;
 
-  constructor() {}
+  submit() {
+    this.ds.addTodo(this.name, this.message)
+    this.router.navigate(['/'])
+  }
+
+  constructor(private ds: DataProviderService, private router: Router) { }
 
 }

@@ -1,9 +1,26 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Add new Todo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Enter Todo Name</ion-label>
+    <ion-input [(ngModel)]="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Enter Todo Message</ion-label>
+    <ion-input [(ngModel)]="message"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Enter Todo priority</ion-label>
+    <ion-input [(ngModel)]="priority"></ion-input>
+  </ion-item>
+  <ion-button expand="block" margin (click)="submit()">
+    <ion-icon slot="start" name="add-circle"></ion-icon>Block Button
+  </ion-button>
+
+</ion-content>

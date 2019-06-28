@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="todo">{{todo.name}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="todo">
+    <ion-card-header>
+      <ion-img [src]="src"></ion-img>
+      <ion-card-subtitle>{{todo.time | date:'medium'}}</ion-card-subtitle>
+      <ion-card-title>{{todo.name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{todo.message}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
